@@ -31,7 +31,7 @@ steps:
     ReleaseOptions: '0'
     ReleaseId: 99396
     EntitlementSelection: '0'
-    Entitlement: 2225
+    Entitlement: 1674
     EntitlementPreference: '0'
     OverrideScanSettings: '2'
     InProgressScanActionType: '1'
