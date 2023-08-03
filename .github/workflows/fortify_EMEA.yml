@@ -79,26 +79,42 @@ jobs:
 
       # Once scan completes, pull SAST issues from Fortify on Demand and generate SARIF output.
       # TODO: Review Action inputs. For most users, these will be the same as used in the Perform SAST Scan step.
-      - name: Download Results
-        uses: itkaa/gha-fod-generate-sarif@1.1.6
-        with:
-          base-url: https://api.emea.fortify.com
-          tenant: "abel"
-          user: "abel_test_seclead"
-          password: "#Z9m3ihz!BPGtd}Y.hkM.hY4MZv})c8y?f"
-          release-id: "125706"
-          output: ./sarif/output.sarif
+      #- name: Download Results
+        #uses: itkaa/gha-fod-generate-sarif@1.1.6
+        #with:
+          #base-url: https://api.emea.fortify.com
+          #tenant: "abel"
+          #user: "abel_test_seclead"
+          #password: "#Z9m3ihz!BPGtd}Y.hkM.hY4MZv})c8y?f"
+          #release-id: "125706"
+          #output: ./sarif/output.sarif
           
-      - name: Add Secure Code Warrior contextual training to SARIF
-        uses: SecureCodeWarrior/github-action-add-sarif-contextual-training@v1.0.7
-        with:
-          inputSarifFile: sarif/output.sarif
-          outputSarifFile: sarif/output.processed.sarif
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
+      #- name: Add Secure Code Warrior contextual training to SARIF
+        #uses: SecureCodeWarrior/github-action-add-sarif-contextual-training@v1.0.7
+        #with:
+          #inputSarifFile: sarif/output.sarif
+          #outputSarifFile: sarif/output.processed.sarif
+          #githubToken: ${{ secrets.GITHUB_TOKEN }}
 
 
       # Import Fortify on Demand results to GitHub Security Code Scanning
+      #- name: Import Results
+        #uses: github/codeql-action/upload-sarif@v1
+        #with:
+          #sarif_file: ./sarif/output.processed.sarif
+
+# Pull SAST issues from Fortify on Demand and generate GitHub-optimized SARIF output
+      - name: Export Results
+        uses: fortify/gha-export-vulnerabilities@v1
+        with:
+          fod_base_url: https://api.emea.fortify.com
+          fod_tenant: "abel"
+          fod_user: "abel_test_seclead"
+          fod_password: "bGJGYk91WmBCT0FXMzFLYjMscVdmXEN4NUhoeDB00"
+          fod_release_id: "125706"
+      
+      # Import Fortify SAST results to GitHub Security Code Scanning
       - name: Import Results
         uses: github/codeql-action/upload-sarif@v1
         with:
-          sarif_file: ./sarif/output.processed.sarif
+          sarif_file: ./gh-fortify-sast.sarif
