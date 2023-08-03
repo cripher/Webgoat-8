@@ -73,7 +73,7 @@ jobs:
           FOD_TENANT: "abel"
           FOD_USER: "abel_test_seclead"
           FOD_PAT: "bGJGYk91WmBCT0FXMzFLYjMscVdmXEN4NUhoeDB00"
-          FOD_RELEASE_ID: "125706"
+          FOD_RELEASE_ID: "125719"
           FOD_UPLOADER_OPTS: "-ep 2 -pp 2 -I 1 -apf -os"
 #           FOD_UPLOADER_NOTES: 'Triggered by GitHub Actions (${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})'
 
@@ -111,7 +111,7 @@ jobs:
           fod_tenant: "abel"
           fod_user: "abel_test_seclead"
           fod_password: "bGJGYk91WmBCT0FXMzFLYjMscVdmXEN4NUhoeDB00"
-          fod_release_id: "125706"
+          fod_release_id: "125719"
       
       # Import Fortify SAST results to GitHub Security Code Scanning
       - name: Import Results
