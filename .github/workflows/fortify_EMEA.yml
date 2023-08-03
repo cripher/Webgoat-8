@@ -73,7 +73,7 @@ jobs:
           FOD_TENANT: "abel"
           FOD_USER: "abel_test_seclead"
           FOD_PAT: "bGJGYk91WmBCT0FXMzFLYjMscVdmXEN4NUhoeDB00"
-          FOD_RELEASE_ID: "125703"
+          FOD_RELEASE_ID: "125706"
           FOD_UPLOADER_OPTS: "-ep 2 -pp 2 -I 1 -apf -os"
 #           FOD_UPLOADER_NOTES: 'Triggered by GitHub Actions (${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})'
 
@@ -86,7 +86,7 @@ jobs:
           tenant: "abel"
           user: "abel_test_seclead"
           password: "#Z9m3ihz!BPGtd}Y.hkM.hY4MZv})c8y?f"
-          release-id: "125703"
+          release-id: "125706"
           output: ./sarif/output.sarif
           
       - name: Add Secure Code Warrior contextual training to SARIF
