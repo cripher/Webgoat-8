@@ -87,7 +87,7 @@ jobs:
           FOD_TENANT: "abel"
           FOD_USER: "abel_test_seclead"
           FOD_PAT: "X3R3c2VobDhiQ3ZpNWQxU0hjTkZYYkpaSzBcUC0x0"
-          FOD_RELEASE_ID: "888129"
+          FOD_RELEASE_ID: "933737"
           FOD_UPLOADER_OPTS: "-ep 2 -pp 2 -I 1 -os"
           #FOD_UPLOADER_NOTES: 'Triggered by GitHub Actions (${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})'
 
