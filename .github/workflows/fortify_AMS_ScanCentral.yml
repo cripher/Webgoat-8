@@ -88,7 +88,7 @@ jobs:
           FOD_USER: "abel_test_seclead"
           FOD_PAT: "X3R3c2VobDhiQ3ZpNWQxU0hjTkZYYkpaSzBcUC0x0"
           FOD_RELEASE_ID: "954431"
-          FOD_UPLOADER_OPTS: "-ep 3 -pp 0 -I 1 -os -apf"
+          FOD_UPLOADER_OPTS: "-a Automated -ep 3 -pp 0 -I 1 -apf"
           #FOD_UPLOADER_NOTES: 'Triggered by GitHub Actions (${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})'
 
       #======================================================================================================================#
