@@ -27,13 +27,13 @@ on:
     - cron: '44 8 * * 1'
 
 jobs:     
-    - name: Run FoD SAST Scan
-      id: "perform_fod_scan"
-      continue-on-error: true         
-      uses: fortify/github-action@v1
-      with:
+  - name: Run FoD SAST Scan
+    id: "perform_fod_scan"
+    continue-on-error: true         
+    uses: fortify/github-action@v1
+    with:
           sast-scan: true
-      env:
+    env:
           FOD_TENANT: abel
           FOD_USER: abelfodtest
           FOD_PASSWORD: MTd6TVF3U1k0T3NZVGxmNER5NURqej1yLVJqK2dw0
@@ -44,7 +44,7 @@ jobs:
           FOD_UPLOADER_NOTES: 'Triggered by GitHub Actions (${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})'
 
 ################################################################## BLJ Added
-    -
-      name: "Set output"
-      id: results
-      run: echo "results=finished" >> $GITHUB_OUTPUT
+  -
+    name: "Set output"
+    id: results
+    run: echo "results=finished" >> $GITHUB_OUTPUT
